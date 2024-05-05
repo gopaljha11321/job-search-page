@@ -13,7 +13,7 @@ function Header() {
         style={{
           padding: "6px 12px",
           borderBottom: "1px solid #3522e2",
-          fontFamily: "Lexend, sans-serif;",
+          fontFamily: "Lexend",
         }}
       >
         Search jobs

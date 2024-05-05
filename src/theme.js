@@ -1,5 +1,5 @@
-import { createMuiTheme } from "@mui/material/styles";
-const theme = createMuiTheme({
+import { createTheme } from "@mui/material/styles";
+const theme = createTheme({
   typography: {
     fontFamily: "Lexend",
     "h3-grey": {
@@ -9,7 +9,7 @@ const theme = createMuiTheme({
       letterSpacing: 1,
       marginBottom: 3,
       color: "#8b8b8b",
-      fontFamily: "Lexend, sans-serif",
+      fontFamily: "Lexend",
     },
   },
 });
