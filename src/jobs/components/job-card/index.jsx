@@ -18,6 +18,33 @@ const useStyles = makeStyles((theme) => ({
       transform: "scale(1.01)",
     },
   },
+  subContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "5px",
+  },
+  minGap: {
+    display: "flex",
+    gap: "5px",
+  },
+  btn: {
+    textAlign: "center",
+    marginBottom: "0.5rem",
+    position: "relative",
+    color: "#4943da",
+    background: "white",
+    border: "none",
+  },
+  btnApply: {
+    width: "100%",
+    backgroundColor: "rgb(85, 239, 196)",
+    color: "rgb(0, 0, 0)",
+    fontWeight: "500",
+    padding: "8px 18px",
+    textTransform: "none",
+    borderRadius: "8px",
+    margin: "5px 0",
+  },
 }));
 
 function JobCard({
@@ -38,19 +65,8 @@ function JobCard({
   return (
     <>
       <Box className={classes.box}>
-        <Box
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "5px",
-          }}
-        >
-          <Box
-            style={{
-              display: "flex",
-              gap: "5px",
-            }}
-          >
+        <Box className={classes.subContainer}>
+          <Box className={classes.minGap}>
             <img
               src={value?.logoUrl}
               alt="company-logo"
@@ -80,26 +96,11 @@ function JobCard({
         </Box>
         <Box>
           <Typography>About the role:</Typography>
-          <Typography
-            style={{
-              fontFamily: "Lexend-thin",
-              textAlign: "justify",
-            }}
-          >
+          <Typography fontFamily="Lexend-thin" textAlign="justify">
             {`${value?.jobDetailsFromCompany.slice(0, 500)}...`}
           </Typography>
           <Box style={{ display: "flex", justifyContent: "center" }}>
-            <Button
-              style={{
-                textAlign: "center",
-                marginBottom: "0.5rem",
-                position: "relative",
-                color: "#4943da",
-                background: "white",
-                border: "none",
-              }}
-              onClick={toggleDescription}
-            >
+            <Button className={classes?.btn} onClick={toggleDescription}>
               View more
             </Button>
           </Box>
@@ -108,20 +109,7 @@ function JobCard({
           <Typography variant="h3-grey">Minimum Experience</Typography>
           <Typography>{value.minExp ? value.minExp : 0} years</Typography>
         </Box>
-        <Button
-          style={{
-            width: "100%",
-            backgroundColor: "rgb(85, 239, 196)",
-            color: "rgb(0, 0, 0)",
-            fontWeight: "500",
-            padding: "8px 18px",
-            textTransform: "none",
-            borderRadius: "8px",
-            margin: "5px 0",
-          }}
-        >
-          ⚡ Easy Apply
-        </Button>
+        <Button className={classes?.btnApply}>⚡ Easy Apply</Button>
       </Box>
     </>
   );
